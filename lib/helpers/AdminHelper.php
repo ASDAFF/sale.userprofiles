@@ -1,9 +1,13 @@
 <?
-namespace WS\SaleUserProfilesPlus\helpers;
+/**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+namespace WS\SaleUserProfiles\helpers;
 
 use CSaleLocation;
 use CSalePersonType;
-use WS\SaleUserProfilesPlus\Object;
+use WS\SaleUserProfiles\Object;
 
 class AdminHelper extends Object{
     static function SelectBoxPersonTypes($personID = 0, $name, $htmlattrs = ""){

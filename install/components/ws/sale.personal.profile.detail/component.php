@@ -1,9 +1,13 @@
 <?php
+/**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
 if (
     !CModule::IncludeModule("sale") ||
-    !CModule::IncludeModule("ws.saleuserprofilesplus")
+    !CModule::IncludeModule("sale.userprofiles")
 ) {
 	ShowError(GetMessage("WS_SALE_MODULE_NOT_INSTALL"));
 	return;

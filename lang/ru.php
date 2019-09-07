@@ -1,13 +1,13 @@
 <?php
 /**
- * @author Smotrov Dmitriy <dsxack@gmail.com>
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
  */
 
 return array(
     "MODULE_NAME" => "Профили покупателей",
     "MODULE_DESC" => "Управление профилями покупателей",
-    "PARTNER_NAME" => "Рабочие решения",
-    "PARTNER_URI" => "http://www.worksolutions.ru",
+    "PARTNER_NAME" => "ASDAFF",
+    "PARTNER_URI" => "https://asdaff.github.io/",
     "NEED_RIGHT_VER" => "Для установки данного решения необходима версия главного модуля #NEED# или выше.",
     "NEED_MODULES" => "Для установки данного решения необходимо наличие модуля #MODULE#.",
 

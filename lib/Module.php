@@ -1,13 +1,17 @@
 <?php
 /**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+/**
  * @author Smotrov Dmitriy <dsxack@gmail.com>
  */
 
-namespace WS\SaleUserProfilesPlus;
+namespace WS\SaleUserProfiles;
 
 
 class Module extends Singleton{
-    const MODULE_ID = 'ws.saleuserprofilesplus';
+    const MODULE_ID = 'sale.userprofiles';
 
     private $_moduleDir;
 

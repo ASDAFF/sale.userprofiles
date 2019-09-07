@@ -1,18 +1,22 @@
 <?php
-$MESS["ws.saleuserprofilesplus_row_id"] = "ID profile";
-$MESS["ws.saleuserprofilesplus_row_name"] = "Name";
-$MESS["ws.saleuserprofilesplus_row_user_id"] = "User";
-$MESS["ws.saleuserprofilesplus_row_person_type_id"] = "Person type";
-$MESS["ws.saleuserprofilesplus_row_person_date_update"] = "Update date";
-$MESS["ws.saleuserprofilesplus_filter_id"] = "ID profile";
-$MESS["ws.saleuserprofilesplus_filter_name"] = "Name";
-$MESS["ws.saleuserprofilesplus_filter_user_id"] = "ID user";
-$MESS["ws.saleuserprofilesplus_filter_person_type_id"] = "ID person type";
-$MESS["ws.saleuserprofilesplus_filter_person_date_update"] = "Update date";
-$MESS["ws.saleuserprofilesplus_edit"] = "Edit";
-$MESS["ws.saleuserprofilesplus_del"] = "Delete";
-$MESS["ws.saleuserprofilesplus_title"] = "Customers profiles list";
-$MESS["ws.saleuserprofilesplus_add"] = "Add profile";
-$MESS["ws.saleuserprofilesplus_yes"] = "Yes";
-$MESS["ws.saleuserprofilesplus_no"] = "No";
+/**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+$MESS["sale.userprofiles_row_id"] = "ID profile";
+$MESS["sale.userprofiles_row_name"] = "Name";
+$MESS["sale.userprofiles_row_user_id"] = "User";
+$MESS["sale.userprofiles_row_person_type_id"] = "Person type";
+$MESS["sale.userprofiles_row_person_date_update"] = "Update date";
+$MESS["sale.userprofiles_filter_id"] = "ID profile";
+$MESS["sale.userprofiles_filter_name"] = "Name";
+$MESS["sale.userprofiles_filter_user_id"] = "ID user";
+$MESS["sale.userprofiles_filter_person_type_id"] = "ID person type";
+$MESS["sale.userprofiles_filter_person_date_update"] = "Update date";
+$MESS["sale.userprofiles_edit"] = "Edit";
+$MESS["sale.userprofiles_del"] = "Delete";
+$MESS["sale.userprofiles_title"] = "Customers profiles list";
+$MESS["sale.userprofiles_add"] = "Add profile";
+$MESS["sale.userprofiles_yes"] = "Yes";
+$MESS["sale.userprofiles_no"] = "No";
 ?>

@@ -1,13 +1,17 @@
 <?php
-use WS\SaleUserProfilesPlus\Module;
-use WS\SaleUserProfilesPlus\Profile;
-use WS\SaleUserProfilesPlus\helpers\AdminHelper;
+/**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+use WS\SaleUserProfiles\Module;
+use WS\SaleUserProfiles\Profile;
+use WS\SaleUserProfiles\helpers\AdminHelper;
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_before.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ws.saleuserprofilesplus/include.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/sale.userprofiles/include.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/sale/include.php");
 
-$POST_RIGHT = $APPLICATION->GetGroupRight("ws.saleuserprofilesplus");
+$POST_RIGHT = $APPLICATION->GetGroupRight("sale.userprofiles");
 if($POST_RIGHT=="D")
 	$APPLICATION->AuthForm(GetMessage("ACCESS_DENIED"));
 
@@ -34,9 +38,9 @@ if($REQUEST_METHOD == "POST" && ($save!="" || $apply!="") && $POST_RIGHT=="W" &&
 
 	if(!$err = $res->getErrorsAsString()){
 		if($apply!="")
-			LocalRedirect("/bitrix/admin/ws.saleuserprofilesplus_edit.php?ID=".$ID."&mess=ok&lang=".LANG."&".$tabControl->ActiveTabParam());
+			LocalRedirect("/bitrix/admin/sale.userprofiles_edit.php?ID=".$ID."&mess=ok&lang=".LANG."&".$tabControl->ActiveTabParam());
 		else
-			LocalRedirect("/bitrix/admin/ws.saleuserprofilesplus_list.php?lang=".LANG);
+			LocalRedirect("/bitrix/admin/sale.userprofiles_list.php?lang=".LANG);
 	}
 	else{
 		if($e = $APPLICATION->GetException()){
@@ -167,7 +171,7 @@ $tabControl->BeginNextTab();
 $tabControl->Buttons(
 	array(
 		"disabled"=>($POST_RIGHT<"W"),
-		"back_url"=>"ws.saleuserprofilesplus_list.php?lang=".LANG,
+		"back_url"=>"sale.userprofiles_list.php?lang=".LANG,
 
 	)
 );

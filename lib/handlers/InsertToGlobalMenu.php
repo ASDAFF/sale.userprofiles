@@ -1,13 +1,17 @@
 <?php
 /**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+/**
  * @author Smotrov Dmitriy <dsxack@gmail.com>
  */
 
-namespace WS\SaleUserProfilesPlus\handlers;
+namespace WS\SaleUserProfiles\handlers;
 
 
-use WS\SaleUserProfilesPlus\Module;
-use WS\SaleUserProfilesPlus\Object;
+use WS\SaleUserProfiles\Module;
+use WS\SaleUserProfiles\Object;
 
 class InsertToGlobalMenu extends Object{
     static public function process() {

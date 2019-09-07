@@ -1,5 +1,9 @@
 <?
-namespace WS\SaleUserProfilesPlus;
+/**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+namespace WS\SaleUserProfiles;
 
 class Profile {
     static function GetPersonFieldsByID($personID) {
@@ -23,7 +27,7 @@ class Profile {
     }
 
     static function GetProfileProps($profileID = null, $personID = null) {
-        // ïîëó÷àåì çíà÷åíèÿ ñâîéñòâ
+        // Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²
         if (!empty($profileID)) {
             $props = array();
             $res = \CSaleOrderUserPropsValue::GetList(array(), array('USER_PROPS_ID'=>$profileID), false, false, array('ID', 'ORDER_PROPS_ID', 'VALUE'));
@@ -32,7 +36,7 @@ class Profile {
             }
         }
 
-        // åñëè íå çàäàí $personID - âûáèðàåì ïåðâûé
+        // ÐµÑÐ»Ð¸ Ð½Ðµ Ð·Ð°Ð´Ð°Ð½ $personID - Ð²Ñ‹Ð±Ð¸Ñ€Ð°ÐµÐ¼ Ð¿ÐµÑ€Ð²Ñ‹Ð¹
         if (empty($personID)) {
             $res = \CSalePersonType::GetList(array(), array(), false, array('nTopCount' => 1), array());
             if ($arRes = $res->Fetch()) {
@@ -40,7 +44,7 @@ class Profile {
             }
         }
 
-        // ïîëó÷àåì ñâîéñòâà
+        // Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð°
         $arProps = array();
         $res = \CSaleOrderProps::GetList(array("SORT"=>"ASC"), array("PERSON_TYPE_ID" => $personID, "USER_PROPS" => "Y"), false, false, array());
         while ($arRes = $res->Fetch()) {
@@ -65,7 +69,7 @@ class Profile {
 
         $result = new ErrorsContainer();
         if (empty($profileID)) {
-            return $result->addErrorString(GetMessage("ws.saleuserprofilesplus_save_error_required_id"));
+            return $result->addErrorString(GetMessage("sale.userprofiles_save_error_required_id"));
         }
         $DB->StartTransaction();
 
@@ -74,23 +78,23 @@ class Profile {
             unset($arFields["PROPS"]);
         }
 
-        // ñîõðàíÿåì ïîëÿ
+        // ÑÐ¾Ñ…Ñ€Ð°Ð½ÑÐµÐ¼ Ð¿Ð¾Ð»Ñ
         if (!empty($arFields)) {
             if(!$profileID = \CSaleOrderUserProps::Update($profileID, $arFields)){
-                $result->addErrorString(GetMessage("ws.saleuserprofilesplus_save_error_save_fields"));
+                $result->addErrorString(GetMessage("sale.userprofiles_save_error_save_fields"));
             } else {
                 $arFields = \CSaleOrderUserProps::GetByID($profileID);
             }
         }
 
-        // ñîõðàíÿåì ñâîéñòâà
+        // ÑÐ¾Ñ…Ñ€Ð°Ð½ÑÐµÐ¼ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð°
         if (!empty($props) && !$result->getErrorsAsString()) {
-            // óäàëÿåì âñå ñâîéñòâà
+            // ÑƒÐ´Ð°Ð»ÑÐµÐ¼ Ð²ÑÐµ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð°
             \CSaleOrderUserPropsValue::DeleteAll($profileID);
             $res = \CSaleOrderProps::GetList(array(), array("PERSON_TYPE_ID" => $arFields["PERSON_TYPE_ID"], "USER_PROPS" => "Y"), false, false, array());
             while ($arRes = $res->Fetch()) {
                 if ($arRes['REQUIED'] === 'Y' && empty($props[$arRes['ID']])) {
-                    $result->addErrorString(GetMessage("ws.saleuserprofilesplus_save_error_required_field") . "\"" . $arRes["NAME"] . "\"");
+                    $result->addErrorString(GetMessage("sale.userprofiles_save_error_required_field") . "\"" . $arRes["NAME"] . "\"");
                     continue;
                 }
 
@@ -134,10 +138,10 @@ class Profile {
             "DATE_UPDATE"       => $arFields["DATE_UPDATE"]
         );
         if (empty($fields["USER_ID"])) {
-            $result->addErrorString(GetMessage("ws.saleuserprofilesplus_save_error_required_field") . "\"êîä ïîëüçîâàòåëÿ, êîòîðîìó ïðèíàäëåæèò ïðîôèëü\"");
+            $result->addErrorString(GetMessage("sale.userprofiles_save_error_required_field") . "\"ÐºÐ¾Ð´ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ, ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¼Ñƒ Ð¿Ñ€Ð¸Ð½Ð°Ð´Ð»ÐµÐ¶Ð¸Ñ‚ Ð¿Ñ€Ð¾Ñ„Ð¸Ð»ÑŒ\"");
         }
 
-        // ñîõðàíÿåì ïîëÿ
+        // ÑÐ¾Ñ…Ñ€Ð°Ð½ÑÐµÐ¼ Ð¿Ð¾Ð»Ñ
         if (!$result->getErrorsAsString() && !empty($arFields)) {
             $id = \CSaleOrderUserProps::Add($arFields);
 

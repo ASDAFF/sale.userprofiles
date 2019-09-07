@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <a name="tb"></a>
 <a href="<?=$arParams["PATH_TO_LIST"]?>"><?=GetMessage("WS_SPPD_RECORDS_LIST")?></a>
@@ -21,7 +25,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 			<td width="40%" align="right"><?echo GetMessage("WS_SALE_PERS_TYPE")?>:</td>
 			<td width="60%">
 <!--                --><?//=$arResult["PERSON_TYPE"]["NAME"]?>
-                <?= \WS\SaleUserProfilesPlus\helpers\AdminHelper::SelectBoxPersonTypes($arResult["PERSON_TYPE_ID"], "PERSON_TYPE_ID", 'onchange="this.form.submit()"');?>
+                <?= \WS\SaleUserProfiles\helpers\AdminHelper::SelectBoxPersonTypes($arResult["PERSON_TYPE_ID"], "PERSON_TYPE_ID", 'onchange="this.form.submit()"');?>
             </td>
 		</tr>
 		<tr>

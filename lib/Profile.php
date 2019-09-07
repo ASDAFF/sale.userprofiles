@@ -1,5 +1,9 @@
 <?php
-namespace WS\SaleUserProfilesPlus;
+/**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+namespace WS\SaleUserProfiles;
 
 use CDBResult;
 use CSaleOrder;
@@ -11,7 +15,7 @@ use CSalePersonType;
 
 /**
  * Class Profile
- * @package WS\SaleUserProfilesPlus
+ * @package WS\SaleUserProfiles
  */
 class Profile extends Object{
     static function GetPersonFieldsByID($personID) {
@@ -140,7 +144,7 @@ class Profile extends Object{
             "DATE_UPDATE"       => $arFields["DATE_UPDATE"]
         );
         if (empty($fields["USER_ID"])) {
-            $result->addErrorString(Module::get()->getMessage("save_error_required_field") . ' "' . GetMessage('ws.saleuserprofilesplus_field_user_id') . '"');
+            $result->addErrorString(Module::get()->getMessage("save_error_required_field") . ' "' . GetMessage('sale.userprofiles_field_user_id') . '"');
         }
 
         if (!$result->getErrorsAsString() && !empty($arFields)) {

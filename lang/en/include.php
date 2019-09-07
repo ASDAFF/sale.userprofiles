@@ -1,4 +1,8 @@
 <?
-$MESS["ws.saleuserprofilesplus_MODULE_NAME"] = "Customers profiles";
-$MESS["ws.saleuserprofilesplus_menu_list"] = "Customers profiles list";
+/**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+$MESS["sale.userprofiles_MODULE_NAME"] = "Customers profiles";
+$MESS["sale.userprofiles_menu_list"] = "Customers profiles list";
 ?>

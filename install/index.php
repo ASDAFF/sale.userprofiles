@@ -1,12 +1,16 @@
 <?php
-use WS\SaleUserProfilesPlus\handlers\InsertToGlobalMenu;
-use WS\SaleUserProfilesPlus\Module;
+/**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+use WS\SaleUserProfiles\handlers\InsertToGlobalMenu;
+use WS\SaleUserProfiles\Module;
 
 IncludeModuleLangFile(__FILE__);
 
-class ws_saleuserprofilesplus extends CModule{
-    const MODULE_ID = 'ws.saleuserprofilesplus';
-    var $MODULE_ID = 'ws.saleuserprofilesplus';
+class sale_userprofiles extends CModule{
+    const MODULE_ID = 'sale.userprofiles';
+    var $MODULE_ID = 'sale.userprofiles';
     public $MODULE_VERSION;
     public $MODULE_VERSION_DATE;
     public $MODULE_NAME;
@@ -28,8 +32,8 @@ class ws_saleuserprofilesplus extends CModule{
         $this->MODULE_NAME = Module::get()->getMessage("MODULE_NAME");
         $this->MODULE_DESCRIPTION = Module::get()->getMessage("MODULE_DESC");
 
-        $this->PARTNER_NAME = GetMessage("ws.saleuserprofilesplus_PARTNER_NAME");
-        $this->PARTNER_URI = GetMessage("ws.saleuserprofilesplus_PARTNER_URI");
+        $this->PARTNER_NAME = GetMessage("sale.userprofiles_PARTNER_NAME");
+        $this->PARTNER_URI = GetMessage("sale.userprofiles_PARTNER_URI");
     }
 
     function InstallDB($arParams = array()){

@@ -1,5 +1,9 @@
 <?
-namespace WS\SaleUserProfilesPlus;
+/**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+namespace WS\SaleUserProfiles;
 
 class Tools{
     static function SelectBoxPersonTypes($personID = 0, $name, $htmlattrs = ""){

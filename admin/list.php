@@ -1,13 +1,17 @@
 <?php
-use WS\SaleUserProfilesPlus\Module;
-use WS\SaleUserProfilesPlus\Profile;
-use WS\SaleUserProfilesPlus\helpers\AdminHelper;
+/**
+ * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+use WS\SaleUserProfiles\Module;
+use WS\SaleUserProfiles\Profile;
+use WS\SaleUserProfiles\helpers\AdminHelper;
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_before.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ws.saleuserprofilesplus/include.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/sale.userprofiles/include.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/sale/include.php");
 
-$POST_RIGHT = $APPLICATION->GetGroupRight("ws.saleuserprofilesplus");
+$POST_RIGHT = $APPLICATION->GetGroupRight("sale.userprofiles");
 if ($POST_RIGHT == "D"){
     $APPLICATION->AuthForm(GetMessage("ACCESS_DENIED"));
 }
@@ -218,7 +222,7 @@ while($arRes = $rsData->NavNext(true, "f_")){
 
     $row =& $lAdmin->AddRow($f_ID, $arRes);
 
-    $row->AddViewField("NAME", '<a href="ws.saleuserprofilesplus_edit.php?ID='.$f_ID.'&lang='.LANG.'">'.$f_NAME.'</a>');
+    $row->AddViewField("NAME", '<a href="sale.userprofiles_edit.php?ID='.$f_ID.'&lang='.LANG.'">'.$f_NAME.'</a>');
     $row->AddInputField("NAME", array("size"=>20));
     $row->AddViewField("USER_ID", $f_USER_NAME . ' (<a href="user_edit.php?ID='.$f_USER_ID.'&lang='.LANG.'">'.$f_USER_ID.'</a>)');
     $row->AddInputField("USER_ID", array("size"=>20));
@@ -262,14 +266,14 @@ while($arRes = $rsData->NavNext(true, "f_")){
         "ICON"=>"edit",
         "DEFAULT"=>true,
         "TEXT"=>Module::get()->getMessage("edit"),
-        "ACTION"=>$lAdmin->ActionRedirect("ws.saleuserprofilesplus_edit.php?ID=".$f_ID)
+        "ACTION"=>$lAdmin->ActionRedirect("sale.userprofiles_edit.php?ID=".$f_ID)
     );
 
     if ($POST_RIGHT>="W") {
         $arActions[] = array(
             "ICON"=>"delete",
             "TEXT"=>Module::get()->getMessage("del"),
-            "ACTION"=>"if(confirm('".GetMessage('ws.saleuserprofilesplus_del_conf')."')) ".$lAdmin->ActionDoGroup($f_ID, "delete")
+            "ACTION"=>"if(confirm('".GetMessage('sale.userprofiles_del_conf')."')) ".$lAdmin->ActionDoGroup($f_ID, "delete")
         );
     }
 
@@ -308,7 +312,7 @@ $lAdmin->AddGroupActionTable(Array(
 $aContext = array(
     array(
         "TEXT"=>Module::get()->getMessage("add"),
-        "LINK"=>"ws.saleuserprofilesplus_edit.php?lang=".LANG,
+        "LINK"=>"sale.userprofiles_edit.php?lang=".LANG,
         "TITLE"=>Module::get()->getMessage("add"),
         "ICON"=>"btn_new",
     ),
