@@ -1,8 +1,8 @@
 <?php
-$MESS['WS_SALE_MODULE_NOT_INSTALL'] = "РњРѕРґСѓР»СЊ Р?РЅС‚РµСЂРЅРµС‚-РјР°РіР°Р·РёРЅ РЅРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅ.";
-$MESS['WS_SPPL_DEFAULT_TITLE'] = "РџСЂРѕС„РёР»Рё";
-$MESS['WS_SPPL_PAGES'] = "РџСЂРѕС„РёР»Рё";
-$MESS['WS_SALE_ACCESS_DENIED'] = "Р”Р»СЏ РїСЂРѕСЃРјРѕС‚СЂР° РїСЂРѕС„РёР»РµР№ РЅРµРѕР±С…РѕРґРёРјРѕ Р°РІС‚РѕСЂРёР·РѕРІР°С‚СЊСЃСЏ.";
-$MESS['WS_SALE_DEL_PROFILE'] = "РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ РїСЂРѕС„РёР»СЏ в„–#ID#";
-$MESS['WS_SALE_DEL_PROFILE_SUC'] = "РџСЂРѕС„РёР»СЊ в„–#ID# СѓРґР°Р»РµРЅ";
-$MESS['WS_SALE_NO_PROFILE'] = "РџСЂРѕС„РёР»СЊ РЅРµ РЅР°Р№РґРµРЅ";
+$MESS['WS_SALE_MODULE_NOT_INSTALL'] = "Модуль Интернет-магазин не установлен.";
+$MESS['WS_SPPL_DEFAULT_TITLE'] = "Профили";
+$MESS['WS_SPPL_PAGES'] = "Профили";
+$MESS['WS_SALE_ACCESS_DENIED'] = "Для просмотра профилей необходимо авторизоваться.";
+$MESS['WS_SALE_DEL_PROFILE'] = "Ошибка удаления профиля №#ID#";
+$MESS['WS_SALE_DEL_PROFILE_SUC'] = "Профиль №#ID# удален";
+$MESS['WS_SALE_NO_PROFILE'] = "Профиль не найден";
