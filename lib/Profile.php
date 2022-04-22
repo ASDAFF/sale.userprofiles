@@ -5,6 +5,7 @@
 
 namespace WS\SaleUserProfiles;
 
+
 use CDBResult;
 use CSaleOrder;
 use CSaleOrderProps;
@@ -13,11 +14,7 @@ use CSaleOrderUserProps;
 use CSaleOrderUserPropsValue;
 use CSalePersonType;
 
-/**
- * Class Profile
- * @package WS\SaleUserProfiles
- */
-class Profile extends Object{
+class Profile extends СObject{
     static function GetPersonFieldsByID($personID) {
         if (!empty($personID)) {
             $res = CSalePersonType::GetList(array(), array("ID" => $personID), false, array('nTopCount' => 1), array());

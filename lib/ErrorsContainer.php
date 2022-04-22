@@ -6,7 +6,7 @@
 namespace WS\SaleUserProfiles;
 
 
-class ErrorsContainer extends Object{
+class ErrorsContainer extends СObject{
     public $errors = array();
 
     function addErrorString($message) {

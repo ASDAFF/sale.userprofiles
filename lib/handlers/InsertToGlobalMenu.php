@@ -3,17 +3,13 @@
  * Copyright (c) 7/9/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
  */
 
-/**
- * @author Smotrov Dmitriy <dsxack@gmail.com>
- */
-
 namespace WS\SaleUserProfiles\handlers;
 
 
 use WS\SaleUserProfiles\Module;
-use WS\SaleUserProfiles\Object;
+use WS\SaleUserProfiles\СObject;
 
-class InsertToGlobalMenu extends Object{
+class InsertToGlobalMenu extends СObject{
     static public function process() {
         if (file_exists($path = Module::get()->getModuleDir() . '/admin')) {
             if ($dir = opendir($path)) {

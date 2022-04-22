@@ -7,9 +7,9 @@ namespace WS\SaleUserProfiles\helpers;
 
 use CSaleLocation;
 use CSalePersonType;
-use WS\SaleUserProfiles\Object;
+use WS\SaleUserProfiles\СObject;
 
-class AdminHelper extends Object{
+class AdminHelper extends СObject{
     static function SelectBoxPersonTypes($personID = 0, $name, $htmlattrs = ""){
         if (empty($name)) {
             return false;
